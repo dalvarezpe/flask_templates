@@ -3,61 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate Marks</title>
-    <!-- Bootstrap CSS -->
+    <title>Marks Distribution</title>
+    <!-- Bootstrap CSS (opcional, dependiendo de tu diseño) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h2>Marks Calculator</h2>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="/submit">
-                            <div class="mb-3">
-                                <label for="Physics" class="form-label">Physics</label>
-                                <input type="number" class="form-control" name="Physics" placeholder="Enter Your marks" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="Chemistry" class="form-label">Chemistry</label>
-                                <input type="number" class="form-control" name="Chemistry" placeholder="Enter Your marks" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="Maths" class="form-label">Maths</label>
-                                <input type="number" class="form-control" name="Maths" placeholder="Enter Your marks" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="Hindi" class="form-label">Hindi</label>
-                                <input type="number" class="form-control" name="Hindi" placeholder="Enter Your marks" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="English" class="form-label">English</label>
-                                <input type="number" class="form-control" name="English" placeholder="Enter Your marks" required>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Calculate</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="card-footer text-center">
-                        {% if Percentage is not none %}
-                            <h3 class="text-success">Your Percentage: {{ Percentage }}%</h3>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% if graph %}
+            <div>{{ graph|safe }}</div>
+        {% endif %}
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Bootstrap JS y dependencias (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
 
 
 
